@@ -4,14 +4,13 @@
 OSTYPE := $(shell uname)
 CFLAGS = -g -fPIC
 
-LDFLAGS	= -lGL -lglut -lGLU
+LDFLAGS	= -lcprocessing -lGL -lglut -lGLU
 ifeq ("$(OSTYPE)", "Darwin")
 	LDFLAGS	= -framework Carbon -framework OpenGL -framework GLUT
 endif
 
 CPROCESSINGPATH=../..
 
-CPROCESSINGLIB=$(CPROCESSINGPATH)/objects
 
 SOURCES= $(wildcard *.cpp)
 

@@ -57,7 +57,8 @@ namespace cprocessing {
     // Global variables
 	//
 
-	int mouseX = 0;  ///< Mouse x coordinate
+	int frameCount = 0;
+        int mouseX = 0;  ///< Mouse x coordinate
 	int mouseY = 0;  ///< Mouse y coordinate
 	int pmouseX = 0;  ///< Previous mouse x coordinate
 	int pmouseY = 0;  ///< Previous mouse y coordinate
@@ -130,6 +131,8 @@ namespace cprocessing {
 
         // End by swapping front and back buffers
         glutSwapBuffers() ;
+        
+        frameCount++;
     }
 
     /// Called whenever window geometry is changed.
@@ -143,7 +146,7 @@ namespace cprocessing {
         height = hgt;
 
         // Default background is gray 70%
-        background (200);
+        background (0);
         
         // Initialize OPENGL modes
         init();

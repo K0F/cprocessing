@@ -4,7 +4,7 @@
 OSTYPE := $(shell uname)
 CFLAGS = -g -fPIC
 
-LDFLAGS	= -lGL -lglut -lGLU
+LDFLAGS	= -lGL -lglut -lGLU -lcprocessing
 ifeq ("$(OSTYPE)", "Darwin")
 	LDFLAGS	= -framework Carbon -framework OpenGL -framework GLUT
 endif

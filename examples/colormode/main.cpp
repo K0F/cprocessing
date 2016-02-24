@@ -9,18 +9,21 @@
 
 using namespace cprocessing;
 
+int q = 0;
+
 void setup () {
-    size (100,100);
+    size (1024,768);
 }
 
 void draw() {
     noStroke();
-    colorMode(HSB, 100);
-    for (int i = 0; i < 100; i++) {
-       for (int j = 0; j < 100; j++) {
-          stroke(i, j, 100);
+    colorMode(HSB, width);
+    for (int i = 0; i < width; i++) {
+       for (int j = 0; j < height; j++) {
+          stroke(i, (j+q)%width , 100);
           point(i, j);
        }
     }
+    q+=10;
 }
 

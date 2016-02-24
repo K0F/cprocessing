@@ -3,17 +3,21 @@
 using namespace cprocessing;
 
 void setup(){
-	size(230,230);
+	size(1600,900,"HELLO!");
 }
 
 void draw() {
 
-	rectMode(CENTER);
-	rect(40,40,50,50);
-	rectMode(RADIUS);
-	rect(90,90,25,25);
-	rectMode(CORNERS);
-	rect(115,115,165,165);
-	rectMode(CORNER);
-	rect(165,165,50,50);
+  background(0);
+  stroke(255,15);
+  for(float i = 0 ; i < width;i+=(sin(10)+1)*2){
+    line(i,0,i,height);
+  }
 }
+
+class Test{
+  Test(){
+
+  }
+
+};

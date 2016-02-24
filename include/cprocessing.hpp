@@ -601,6 +601,7 @@ namespace cprocessing {
     //
     // Global variables (defined in file cprocessing.cpp)
     //
+    extern int frameCount;    ///< Mouse x coordinate
     extern int mouseX;    ///< Mouse x coordinate
     extern int mouseY;    ///< Mouse y coordinate
     extern int pmouseX; ///< Previous mouse x coordinate
