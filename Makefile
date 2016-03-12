@@ -1,4 +1,4 @@
-CFLAGS = -g -fPIC
+CFLAGS = -O3 -g -fPIC
 
 OBJDIR= objects
 
