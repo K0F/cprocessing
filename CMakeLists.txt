@@ -31,11 +31,16 @@ set(CMAKE_EXE_LINKER_FLAGS_DEBUG ${GCOV_FLAGS})
 set(CMAKE_CONFIGURATION_TYPES Debug Release)
 #message("CMAKE_CFG_INTDIR = ${CMAKE_CFG_INTDIR}")
 
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include/")
+find_package(OpenGL)
+
+
+include_directories(
+"${CMAKE_CURRENT_SOURCE_DIR}/include/"
+"${OPENGL_INCLUDE_DIR}"
+)
 
 FILE(GLOB SRC_FILES "src/*.cpp")
 
-find_package(OpenGL)
 
 
 add_library(cprocessing STATIC ${SRC_FILES})
