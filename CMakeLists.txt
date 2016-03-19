@@ -39,7 +39,7 @@ find_package(OpenGL)
 
 
 add_library(cprocessing STATIC ${SRC_FILES})
-target_link_libraries(cprocessing OpenGL_LIBRARIES)
+# target_link_libraries(cprocessing OpenGL_LIBRARIES)
 
 
 
