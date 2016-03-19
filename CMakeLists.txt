@@ -35,7 +35,14 @@ include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 FILE(GLOB SRC_FILES "src/*.cpp")
 
+find_package(OpenGL)
+
+
 add_library(cprocessing STATIC ${SRC_FILES})
+target_link_libraries(cprocessing OpenGL_LIBRARIES)
+
+
+
 #add_library(cprocessing SHARED ${SRC_FILES})
 
 
