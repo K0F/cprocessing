@@ -18,12 +18,6 @@
 using namespace cprocessing;
 using namespace std;
 
-struct PFont {
-  PFont() {}
-};
-
-static PFont font;
-
 namespace cprocessing {
 void text(string input) {
   glMatrixMode(GL_PROJECTION);
