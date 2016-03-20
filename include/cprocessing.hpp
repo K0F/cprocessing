@@ -23,6 +23,9 @@
 namespace cprocessing {
 
 void text(const char *input);
+
+void text(const char *input, int x, int y);
+
 //
 // Global types
 //
