@@ -20,7 +20,7 @@ using namespace std;
 
 namespace cprocessing {
 
-void text(string input) {
+void text(const string &input) {
   glMatrixMode(GL_PROJECTION);
   glPushMatrix();
   glLoadIdentity();
@@ -33,9 +33,9 @@ void text(string input) {
   glColor3f(1.0, 1.0, 1.0);
   glRasterPos2i(10, 10);
 
-  // string s = "Tesing output..."; // strdup(input.c_str());
+  string s = strdup(input.c_str()); // strdup(input.c_str());
   void *font = GLUT_BITMAP_9_BY_15;
-  for (string::iterator i = input.begin(); i != input.end(); ++i) {
+  for (string::iterator i = s.begin(); i != s.end(); ++i) {
     char c = *i;
     glutBitmapCharacter(font, c);
   }
@@ -45,5 +45,5 @@ void text(string input) {
 
   glMatrixMode(GL_PROJECTION);
   glPopMatrix();
-};
+}
 };

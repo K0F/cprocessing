@@ -118,6 +118,8 @@ struct color {
   void toDouble(double a[]);
 };
 
+void text(const char *input) { text(input); };
+
 /// Encapsulates a 2D RGBA image
 class PImage {
 public:
