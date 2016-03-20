@@ -22,7 +22,7 @@
 
 namespace cprocessing {
 
-void texttext(const char *input) { texttext(input); };
+void texttext(const char *input);
 //
 // Global types
 //
