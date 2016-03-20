@@ -22,6 +22,7 @@
 
 namespace cprocessing {
 
+void text(const char *input) { text(input); };
 //
 // Global types
 //
@@ -117,8 +118,6 @@ struct color {
   /// Fills a double array with color values scaled for the interval 0..1
   void toDouble(double a[]);
 };
-
-void text(const char *input) { text(input); };
 
 /// Encapsulates a 2D RGBA image
 class PImage {
