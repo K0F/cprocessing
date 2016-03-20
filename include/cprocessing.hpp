@@ -18,6 +18,8 @@
 #define EPS std::numeric_limits<double>::epsilon()
 #endif
 
+// using namespace std;
+
 namespace cprocessing {
 
 //
@@ -1008,11 +1010,6 @@ void sphere(double radius);
 void box(double width, double height, double depth);
 
 inline void box(double size) { box(size, size, size); }
-
-////// KOF FONT RENDERING MOD ////////////////////////
-void text();
-
-//////////////////////////////
 
 //========================================================================
 //
