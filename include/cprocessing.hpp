@@ -1010,7 +1010,7 @@ void box(double width, double height, double depth);
 inline void box(double size) { box(size, size, size); }
 
 ////// KOF FONT RENDERING MOD ////////////////////////
-void text(char input) { text(input); };
+// void text(string input);
 
 //////////////////////////////
 
