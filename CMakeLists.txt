@@ -41,9 +41,8 @@ include_directories(
 
 FILE(GLOB SRC_FILES "src/*.cpp")
 
-
-
 add_library(cprocessing STATIC ${SRC_FILES})
+
 # target_link_libraries(cprocessing OpenGL_LIBRARIES)
 
 
