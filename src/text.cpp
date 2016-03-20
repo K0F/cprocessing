@@ -20,7 +20,7 @@ using namespace std;
 
 namespace cprocessing {
 
-void text(const string &input) {
+void texttext(const string &input) {
   glMatrixMode(GL_PROJECTION);
   glPushMatrix();
   glLoadIdentity();
