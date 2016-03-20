@@ -34,7 +34,7 @@ void text(const char *input, int x, int y) {
   glRasterPos2i(x, height - y);
 
   string s = strdup(input); // strdup(input.c_str());
-  void *font = GLUT_BITMAP_9_BY_15;
+  void *font = GLUT_BITMAP_8_BY_13;
   for (string::iterator i = s.begin(); i != s.end(); ++i) {
     char c = *i;
     glutBitmapCharacter(font, c);
