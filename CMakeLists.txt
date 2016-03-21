@@ -33,11 +33,15 @@ set(CMAKE_CONFIGURATION_TYPES Debug Release)
 
 find_package(OpenGL)
 
-
 include_directories(
-"${CMAKE_CURRENT_SOURCE_DIR}/include/"
-"${OPENGL_INCLUDE_DIR}"
-)
+  "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+  )
+
+if(UNIX)
+  include_directories(
+    "${OPENGL_INCLUDE_DIR}"
+    )
+endif()
 
 FILE(GLOB SRC_FILES "src/*.cpp")
 
