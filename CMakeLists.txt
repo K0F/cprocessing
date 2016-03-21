@@ -42,7 +42,7 @@ ExternalProject_Add(freeglut
   ALWAYS 1
   )
 
-SET(freeglut_INCLUDE_DIR "${CMAKE_INCLUDE_DIR}/externals/src/freeglut/include/GL")
+SET(freeglut_INCLUDE_DIR "${CMAKE_BINARY_DIR}/externals/src/freeglut/include/GL")
 SET(freeglut_BUILD_DIR "${CMAKE_BINARY_DIR}/externals/src/freeglut-build/lib")
 
 # SET(GLUT_ROOT_PATH ${freeglut_INCLUDE_DIR})
