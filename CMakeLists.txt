@@ -72,8 +72,13 @@ include_directories(
   ${freeglut_INCLUDE_DIR}
   )
 
+FILE(GLOB SRC_FILES "src/*.cpp")
+
+add_library(cprocessing STATIC ${SRC_FILES})
+
+
 if(UNIX)
-  target_link_libraries(ccollider
+  target_link_libraries(cprocessing
     glfw
     X11
     Xext
@@ -81,6 +86,7 @@ if(UNIX)
     Xxf86vm
     Xi
     Xrandr
+    ${OPENGL_LIBRARIES}
     "libglut.a"
     ) 
 endif()
@@ -88,13 +94,10 @@ endif()
 if(WIN32)
   target_link_libraries(ccollider
   "glut.lib"
+    ${OPENGL_LIBRARIES}
     )
   endif()
 
-
-FILE(GLOB SRC_FILES "src/*.cpp")
-
-add_library(cprocessing STATIC ${SRC_FILES})
 
 # target_link_libraries(cprocessing OpenGL_LIBRARIES)
 
