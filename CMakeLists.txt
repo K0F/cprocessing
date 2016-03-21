@@ -65,6 +65,7 @@ if(UNIX)
 endif()
 
 link_directories(
+  ${OPENGL_GL_LIBRARY}
   ${freeglut_BUILD_DIR}
   )
 
