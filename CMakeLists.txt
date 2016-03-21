@@ -75,7 +75,7 @@ include_directories(
 FILE(GLOB SRC_FILES "src/*.cpp")
 
 add_library(cprocessing STATIC ${SRC_FILES})
-
+add_dependencies(cprocessing freeglut)
 
 if(UNIX)
   target_link_libraries(cprocessing
