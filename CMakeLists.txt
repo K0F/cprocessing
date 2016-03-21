@@ -31,6 +31,27 @@ set(CMAKE_EXE_LINKER_FLAGS_DEBUG ${GCOV_FLAGS})
 set(CMAKE_CONFIGURATION_TYPES Debug Release)
 #message("CMAKE_CFG_INTDIR = ${CMAKE_CFG_INTDIR}")
 
+include(ExternalProject)
+
+ExternalProject_Add(freeglut
+  GIT_REPOSITORY "https://github.com/K0F/freeglut.git"
+  GIT_TAG "master"
+  PREFIX "externals"
+  UPDATE_DISCONNECTED 0
+  TIMEOUT 10
+  ALWAYS 1
+  )
+
+SET(freeglut_INCLUDE_DIR "${CMAKE_INCLUDE_DIR}/externals/src/freeglut/include/GL")
+SET(freeglut_BUILD_DIR "${CMAKE_BINARY_DIR}/externals/src/freeglut-build/lib")
+
+# SET(GLUT_ROOT_PATH ${freeglut_INCLUDE_DIR})
+MESSAGE(STATUS "ok got freeglut freeglut_INCLUDE_DIR ${freeglut_INCLUDE_DIR}")
+MESSAGE(STATUS "ok got freeglut freeglut_BUILD_DIR ${freeglut_BUILD_DIR}")
+
+
+
+
 find_package(OpenGL)
 
 include_directories(
@@ -42,6 +63,34 @@ if(UNIX)
     "${OPENGL_INCLUDE_DIR}"
     )
 endif()
+
+link_directories(
+  ${freeglut_BUILD_DIR}
+  )
+
+include_directories(
+  ${freeglut_INCLUDE_DIR}
+  )
+
+if(UNIX)
+  target_link_libraries(ccollider
+    glfw
+    X11
+    Xext
+    Xmu
+    Xxf86vm
+    Xi
+    Xrandr
+    "libglut.a"
+    ) 
+endif()
+
+if(WIN32)
+  target_link_libraries(ccollider
+  "glut.lib"
+    )
+  endif()
+
 
 FILE(GLOB SRC_FILES "src/*.cpp")
 
