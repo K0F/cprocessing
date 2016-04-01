@@ -1,0 +1,8 @@
+#!/bin/bash
+# run cprocessing sketch inside folder
+# add gitignore to binary
+
+echo `basename $(pwd)` > .gitignore
+
+(cat `ls | grep .pde` |  sed '1s/^/#include <cprocessing.hpp>\nusing namespace cprocessing;/' | g++ -x c++ - -lcprocessing -lGLU -lGL -lglut -O3 -Wall -o `basename $(pwd)` ) && (echo "Compilation OK! ..running" && ./`basename $(pwd)`) || echo "Compilation failed"
+
